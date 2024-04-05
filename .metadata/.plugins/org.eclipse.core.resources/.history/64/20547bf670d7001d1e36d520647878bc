@@ -1,0 +1,20 @@
+package com.suchiit.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.suchiit.entity.StudentEntity;
+import com.suchiit.service.StudentService;
+
+@RestController
+public class StudentController {
+@Autowired
+private StudentService studentservice;
+public ResponseEntity<StudentEntity> saveStudent(@RequestBody Student student)
+{
+	return null;
+	
+}
+}

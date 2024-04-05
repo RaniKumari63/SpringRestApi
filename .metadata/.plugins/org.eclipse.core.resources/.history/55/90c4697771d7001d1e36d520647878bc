@@ -1,0 +1,26 @@
+package com.suchiit.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.suchiit.entity.StudentEntity;
+import com.suchiit.model.Student;
+import com.suchiit.service.StudentService;
+
+@RestController
+@RequestMapping("/students")
+public class StudentController {
+@Autowired
+private StudentService studentservice;
+@PostMapping
+public ResponseEntity<StudentEntity> saveStudent(@RequestBody Student student)
+{
+	return new ResponseEntity<StudentEntity>(studentservice.saveStudent(student),HttpStatus.CREATED);
+	
+}
+}

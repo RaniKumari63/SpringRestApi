@@ -1,0 +1,42 @@
+package com.suchiit.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.suchiit.model.Product;
+import com.suchiit.model.User;
+import com.suchiit.service.UserService;
+
+@RestController
+@RequestMapping("/restapi/users")
+public class UserController {
+@Autowired
+UserService userservice;
+@Autowired
+ProductController productcontroller;
+
+public ResponseEntity<String> addUsers(@RequestBody User user)
+{
+	List<Product> allProducts=productcontroller.getAllProducts();
+	String msg="";
+	User reguser=userservice.RegisterUser(user);
+	if(reguser!=null)
+	{
+		msg="UserRegistered Successfully";
+		Res
+	}
+	else
+	{
+		
+	}
+	return null;
+	
+}
+
+
+}
